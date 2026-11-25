@@ -7,7 +7,6 @@ package co.edu.sena.exerciseagentea.view;
 import co.edu.sena.exerciseagentea.controller.ILineController;
 import co.edu.sena.exerciseagentea.controller.LineController;
 import co.edu.sena.exerciseagentea.model.Line;
-import co.edu.sena.exerciseagentea.model.Shed;
 import co.edu.sena.exerciseagentea.utils.MessageUtils;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
@@ -78,6 +77,8 @@ public class JFrameLine extends javax.swing.JFrame {
         jLabelTitle.setText("Línea");
 
         jLabelId.setText("Id:");
+
+        jTextFieldId.setEditable(false);
 
         jLabelStatus.setText("Nombre:");
 
@@ -186,8 +187,7 @@ public class JFrameLine extends javax.swing.JFrame {
 
     private void jButtonInsertActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonInsertActionPerformed
         try {
-            Line line = new Line();
-            line.setId(Integer.parseInt(jTextFieldId.getText()));
+            Line line = new Line();            
             line.setName(jTextFieldName.getText());
             
             lineController.insert(line);
