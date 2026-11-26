@@ -10,15 +10,25 @@ package co.edu.sena.exerciseagentea.model;
  * Objetivo: modelo galpón
  */
 public class Shed {
+    private int id;
     private int number;
     private String status;
     
     public Shed() {
     }
 
-    public Shed(int number, String status) {
+    public Shed(int id, int number, String status) {
+        this.id = id;
         this.number = number;
         this.status = status;
+    }   
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public int getNumber() {
